@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DmDEV Slovak Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="DmDEV Logo">
+        <h1>DmDEV Slovak Quiz</h1>
+    </header>
+
+    <div class="quiz-container">
+        <h2>Тестування (Математика)</h2>
+        <form id="quiz-form">
+            <div class="question">
+                <p>1. Як буде «Математика» словацькою?</p>
+                <label><input type="radio" name="q1" value="Matematika"> Matematika</label><br>
+                <label><input type="radio" name="q1" value="Číslo"> Číslo</label><br>
+                <label><input type="radio" name="q1" value="Vzorec"> Vzorec</label>
+            </div>
+            <div class="question">
+                <p>2. Як буде «Число» словацькою?</p>
+                <label><input type="radio" name="q2" value="Číslo"> Číslo</label><br>
+                <label><input type="radio" name="q2" value="Číslica"> Číslica</label><br>
+                <label><input type="radio" name="q2" value="Znak"> Znak</label>
+            </div>
+            <div class="question">
+                <p>3. Введи переклад слова «Цифра» словацькою:</p>
+                <input type="text" name="q3" placeholder="Введи відповідь">
+            </div>
+            <div class="question">
+                <p>4. Введи переклад слова «Рівняння» словацькою:</p>
+                <input type="text" name="q4" placeholder="Введи відповідь">
+            </div>
+            <div class="question">
+                <p>5. Як буде «Вираз» словацькою?</p>
+                <label><input type="radio" name="q5" value="Výraz"> Výraz</label><br>
+                <label><input type="radio" name="q5" value="Úloha"> Úloha</label><br>
+                <label><input type="radio" name="q5" value="Obsah"> Obsah</label>
+            </div>
+            <div class="question">
+                <p>6. Як буде «Приклад» словацькою?</p>
+                <label><input type="radio" name="q6" value="Príklad"> Príklad</label><br>
+                <label><input type="radio" name="q6" value="Podiel"> Podiel</label><br>
+                <label><input type="radio" name="q6" value="Súčet"> Súčet</label>
+            </div>
+            <div class="question">
+                <p>7. Введи переклад слова «Задача» словацькою:</p>
+                <input type="text" name="q7" placeholder="Введи відповідь">
+            </div>
+            <div class="question">
+                <p>8. Введи переклад слова «Додавання» словацькою:</p>
+                <input type="text" name="q8" placeholder="Введи відповідь">
+            </div>
+            <div class="question">
+                <p>9. Як буде «Віднімання» словацькою?</p>
+                <label><input type="radio" name="q9" value="Odčítanie"> Odčítanie</label><br>
+                <label><input type="radio" name="q9" value="Násobenie"> Násobenie</label><br>
+                <label><input type="radio" name="q9" value="Delenie"> Delenie</label>
+            </div>
+            <div class="question">
+                <p>10. Як буде «Множення» словацькою?</p>
+                <label><input type="radio" name="q10" value="Násobenie"> Násobenie</label><br>
+                <label><input type="radio" name="q10" value="Rozdiel"> Rozdiel</label><br>
+                <label><input type="radio" name="q10" value="Súčin"> Súčin</label>
+            </div>
+
+            <button type="button" id="submit-btn">Перевірити результати</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
