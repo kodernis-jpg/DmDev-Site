@@ -1,0 +1,141 @@
+    header {
+    background:#ffffff;
+    color: #6a1b9a;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;       /* дозволяє перенос на мобілках */
+    text-align: center;
+    }
+
+    header img {
+    height: 45px;
+    margin: 5px 10px 5px 0;
+    }
+
+    header h1 {
+    font-size: clamp(18px, 5vw, 28px);
+    margin: 0;
+    font-weight: bold;
+    }
+    .quiz-container {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    width: 500px;
+    margin: 40px auto;
+    }
+
+
+    .question {
+    margin-bottom: 20px;
+    text-align: left;
+    }
+
+    button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #6a1b9a;
+    color: white;
+    font-size: 16px;
+    transition: background 0.2s;
+    }
+
+    button:hover {
+    background: #4a116e;
+    }
+
+    #result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #6a1b9a;
+    }
+
+    .dictionary {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    }
+
+    .dictionary th, 
+    .dictionary td {
+    border: 1px solid #ddd;
+    padding: 10px 14px;
+    text-align: left;
+    }
+
+    .dictionary th {
+    background-color: #6a1b9a;
+    color: #fff;
+    font-weight: bold;
+    }
+
+    .dictionary tr:nth-child(even) {
+    background-color: #f9f5fc;
+    }
+
+    .dictionary tr:hover {
+    background-color: #eee;
+    }
+
+        nav {
+    background: #6a1b9a;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 12px 0;
+    }
+    nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.2s, transform 0.2s;
+    }
+    nav a:hover {
+    color: #f0d9ff;
+    transform: scale(1.05);
+    }
+
+    .project-container {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+    }
+
+    h2 {
+    color: #6a1b9a;
+    margin-bottom: 15px;
+    }
+
+    p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+    }
+
+    img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    margin-top: 20px;
+    }
+
+    .caption {
+    color: #555;
+    font-size: 14px;
+    margin-top: 8px;
+    font-style: italic;
+    }

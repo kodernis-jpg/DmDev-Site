@@ -1,0 +1,107 @@
+    <!DOCTYPE html>
+    <html lang="uk">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DmDEV Slovak Quiz – Головна</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    /* навігація */
+    nav {
+    background: #6a1b9a;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 12px 0;
+    }
+    nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.2s, transform 0.2s;
+    }
+    nav a:hover {
+    color: #f0d9ff;
+    transform: scale(1.05);
+    }
+
+    /* головний блок */
+    .hero {
+    text-align: center;
+    padding: 90px 20px;
+    background: linear-gradient(180deg, #faf6ff 0%, #ffffff 100%);
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    width: 80%;
+    max-width: 900px;
+    margin: 60px auto;
+    }
+
+    .hero h2 {
+    color: #6a1b9a;
+    font-size: 34px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    }
+
+    .hero p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    }
+
+    /* кнопка */
+    .hero button {
+    background: #6a1b9a;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 40px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+    }
+
+    .hero button:hover {
+    background: #4a116e;
+    transform: scale(1.05);
+    }
+
+    /* іконка підпису */
+    .slogan {
+    font-size: 20px;
+    color: #555;
+    margin-top: 20px;
+    font-style: italic;
+    }
+    </style>
+    </head>
+    <body>
+
+    <header>
+    <img src="logo.png" alt="DmDEV Logo">
+    <h1>DmDEV Slovak Quiz</h1>
+    </header>
+
+    <nav>
+    <a href="index.html">Головна</a>
+    <a href="topics.html">Теми</a>
+    <a href="quiz.html">Тест</a>
+    <a href="project.html">Про проєкт</a>
+    </nav>
+
+    <section class="hero">
+    <h2>Ми допоможемо тобі легко вивчати словацьку 💬</h2>
+    <p>Наш сайт створений для студентів, які хочуть запам’ятовувати слова, терміни 
+    та фрази з різних предметів — просто, цікаво й без нудних підручників.</p>
+    
+    <button onclick="location.href='topics.html'">Почати</button>
+    
+    <div class="slogan">Навчайся з DmDEV — легко, швидко та з посмішкою 💜</div>
+    </section>
+
+    </body>
+    </html>
