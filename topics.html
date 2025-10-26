@@ -1,0 +1,100 @@
+   <!DOCTYPE html>
+    <html lang="uk">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DmDEV Slovak Quiz – Теми</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    /* сітка для тем */
+    .topics-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    }
+
+    /* квадратна картка теми */
+    .topic-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    width: 180px;
+    height: 180px;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .topic-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    }
+
+    .topic-card h3 {
+    color: #6a1b9a;
+    font-size: 18px;
+    margin: 10px 0;
+    }
+
+    .topic-card p {
+    color: #333;
+    font-size: 14px;
+    margin: 0;
+    }
+
+    .topic-card button {
+    padding: 8px 0;
+    font-size: 14px;
+    border-radius: 6px;
+    }
+    </style>
+    </head>
+    <body>
+
+    <header>
+    <img src="logo.png" alt="DmDEV Logo">
+    <h1>DmDEV Slovak Quiz</h1>
+    </header>
+    <nav>
+    <a href="index.html">Головна</a>
+    <a href="topics.html">Теми</a>
+    <a href="404.html">Тест</a>
+    <a href="project.html">Про проєкт</a>
+    </nav>
+    <div class="quiz-container">
+    <h2>Теми курсу</h2>
+
+    <div class="topics-grid">
+        <div class="topic-card">
+        <h3>🟣 Математика</h3>
+        <p>Базові терміни</p>
+        <button onclick="location.href='dictionary_math.html'">Відкрити</button>
+        </div>
+
+        <div class="topic-card">
+        <h3>🟢 Фізика</h3>
+        <p>Основні поняття</p>
+        <button onclick="location.href='404.html'">Відкрити</button>
+        </div>
+
+        <div class="topic-card">
+        <h3>🔵 Інформатика</h3>
+        <p>Комп’ютерні терміни</p>
+        <button onclick="location.href='404.html'">Відкрити</button>
+        </div>
+
+        <div class="topic-card">
+        <h3>🟠 Хімія</h3>
+        <p>Хімічні вирази</p>
+        <button onclick="location.href='404.html'">Відкрити</button>
+        </div>
+    </div>
+    </div>
+
+    </body>
+    </html>
