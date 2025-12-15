@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SlovakQuiz — Напрям навчання</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style_goal.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <a class="logo" href="index.html" aria-label="SlovakQuiz — Home">Slovak<span>Quiz</span></a>
+
+  <div class="lang-switch" id="langSwitch">
+    <button class="lang-btn" aria-label="Language">
+    <span>Українська</span> <span class="chev">▾</span>
+    </button>
+
+    <div class="lang-menu hidden" id="langMenu">
+      <button class="lang-item" data-lang="uk"> Українська</button>
+      <button class="lang-item" data-lang="en"> English</button>
+      <button class="lang-item" data-lang="sk"> Slovenčina</button>
+    </div>
+  </div>
+</header>
+
+<main class="hero">
+<section class="hero-card goal-card">
+
+  <div class="goal-header">
+    <h2 data-i18n="field_title">Для якого напряму ти навчаєшся?</h2>
+    <p data-i18n="field_subtitle">Обери свій напрям</p>
+  </div>
+
+<div class="goal-options">
+
+  <!-- ✅ АКТИВНА -->
+  <button class="goal-option" onclick="selectField('programming')" data-i18n="option_programming">
+    Програмування
+  </button>
+
+  <!-- ❌ НЕ ГОТОВІ -->
+  <button class="goal-option disabled" disabled>
+    Право
+  </button>
+
+  <button class="goal-option disabled" disabled>
+    Біологія
+  </button>
+
+  <button class="goal-option disabled" disabled>
+   Фізика
+  </button>
+
+  <button class="goal-option disabled" disabled>
+    Хімія
+  </button>
+</div>
+
+
+</section>
+
+</main>
+<script src="js/i18n.js"></script>
+<script src="js/lang-ui.js"></script>
+<script src="js/study.js"></script>
+<script src="js/page-transition.js"></script>
+</body>
+</html>

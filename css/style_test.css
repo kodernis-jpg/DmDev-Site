@@ -1,0 +1,23 @@
+/* Styles for the quiz/test page */
+.test-layout{ padding:28px; max-width:900px; margin:0 auto; }
+.test-area{ width:100%; }
+.progress-wrap{ display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+.progress-label{ width:48px; text-align:right; font-weight:800; color:var(--muted); }
+.progress-bar{ flex:1; background:rgba(0,0,0,0.06); height:14px; border-radius:10px; overflow:hidden; }
+.progress-fill{ height:100%; background:linear-gradient(90deg,var(--primary),var(--primary2)); width:0%; transition:width .35s ease; }
+
+.question-card{ background:var(--card); border:1px solid var(--border); padding:18px; border-radius:14px; box-shadow:0 8px 22px rgba(43,35,68,0.06); }
+.question-prompt{ font-weight:900; font-size:18px; margin-bottom:12px; }
+.choices{ display:flex; flex-direction:column; gap:10px; }
+.choice{ padding:12px 14px; border-radius:10px; background:#fff; border:1px solid rgba(43,35,68,0.05); cursor:pointer; font-weight:800; }
+.choice.correct{ background:linear-gradient(90deg, rgba(34,197,94,0.12), rgba(34,197,94,0.06)); border-color:rgba(34,197,94,0.3); }
+.choice.wrong{ background:linear-gradient(90deg, rgba(239,68,68,0.06), rgba(239,68,68,0.03)); border-color:rgba(239,68,68,0.18); opacity:0.95; }
+.choice:disabled{ cursor:default; }
+
+.controls{ display:flex; justify-content:space-between; gap:12px; margin-top:14px; }
+.result{ margin-top:18px; padding:14px; background:var(--card); border-radius:12px; text-align:center; }
+
+@media(max-width:580px){
+  .test-layout{ padding:16px; }
+  .question-prompt{ font-size:16px; }
+}

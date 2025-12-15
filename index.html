@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SlovakQuiz — Вивчай словацьку</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="page">
+<header class="topbar">
+  <a class="logo" href="index.html" aria-label="SlovakQuiz — Home">Slovak<span>Quiz</span></a>
+
+  <div class="lang-switch" id="langSwitch">
+    <button class="lang-btn" aria-label="Мова сайту">
+    <span>Українська</span> <span class="chev">▾</span>
+    </button>
+
+    <div class="lang-menu hidden" id="langMenu">
+      <button class="lang-item" data-lang="uk"> Українська</button>
+      <button class="lang-item" data-lang="en"> English</button>
+      <button class="lang-item" data-lang="sk"> Slovenčina</button>
+    </div>
+  </div>
+</header>
+<main class="hero">
+  <section class="hero-card">
+
+    <div class="hero-text">
+      <h1 data-i18n="hero_title">
+        Вивчай словацьку легко
+      </h1>
+
+      <p data-i18n="hero_subtitle">
+        Короткі уроки, слова, фрази та прогрес — все в одному місці.
+      </p>
+
+        <div class="hero-actions">
+        <a class="btn btn-primary" href="goal.html" data-i18n="btn_start">
+            Розпочати
+        </a>
+
+        <a class="btn-link" href="login.html" data-i18n="btn_have_account">
+            Уже маю акаунт
+        </a>
+        </div>
+    </div>
+
+        <div class="hero-box">
+        <img
+            src="iconglogo.png"
+            alt="SlovakQuiz character"
+            class="hero-character"
+            draggable="false"
+        />
+        </div>
+
+
+  </section>
+</main>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <a class="logo" href="index.html" aria-label="SlovakQuiz — Home">Slovak<span>Quiz</span></a>
+        <p>Навчання словацької мови просто та ефективно.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="goals_title">Умови та конфіденційність</h4>
+        <ul class="footer-links">
+            <li><a href="#" data-i18n="footer_terms">Terms</a></li>
+            <li><a href="#" data-i18n="footer_privacy">Privacy</a></li>
+        </ul>
+    </div>
+    
+    <div class="footer-col">
+        <h4 data-i18n="footer_help">Підтримка</h4>
+        <ul class="footer-links">
+            <li><a href="#" data-i18n="footer_contact">Зв'язатися з нами</a></li>
+            <li><a href="project.html" data-i18n="footer_whosme">Хто ми?</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 SlovakQuiz — All rights reserved</div>
+  </footer>
+
+</div>
+
+<!-- Cookies -->
+<div id="cookieBanner" class="cookie hidden">
+  <div class="cookie-text" data-i18n="cookie_text">
+    Ми використовуємо cookies для сесії та зручності.
+  </div>
+  <div class="cookie-actions">
+    <button id="acceptCookies" class="btn btn-primary" data-i18n="cookie_accept">
+      Прийняти
+    </button>
+    <button id="declineCookies" class="btn btn-outline" data-i18n="cookie_decline">
+      Відхилити
+    </button>
+  </div>
+</div>
+<!-- JS -->
+<script src="js/i18n.js"></script>
+<script src="js/lang-ui.js"></script>
+<script src="js/session.js"></script>
+<script src="js/cookies.js"></script>
+<script src="js/page-transition.js"></script>
+</body>
+</html>

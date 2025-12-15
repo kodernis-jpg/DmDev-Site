@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>5. Програміст і робота — SlovakQuiz</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style_courses.css" />
+</head>
+<body data-course-id="course-4">
+<header class="topbar">
+  <a class="logo" href="index.html">Slovak<span>Quiz</span></a>
+
+  <div class="lang-switch" id="langSwitch">
+    <button class="lang-btn" aria-label="Language">
+     <span>Українська</span> <span class="chev">▾</span>
+    </button>
+
+    <div class="lang-menu hidden" id="langMenu">
+      <button class="lang-item" data-lang="uk"> Українська</button>
+      <button class="lang-item" data-lang="en"> English</button>
+      <button class="lang-item" data-lang="sk"> Slovenčina</button>
+    </div>
+  </div>
+</header>
+<main class="hero">
+<section class="hero-card desk-layout">
+    <div>
+      <h1 data-i18n="course_4_title">4. Програміст і робота</h1>
+      <p class="hint" data-i18n="course_4_meta">Огляд ролі програміста та робочих процесів.</p>
+<section class="desk-section">
+
+  <div class="desk-grid">
+
+    <div class="desk-card">
+      <div class="icon">💰</div>
+      <h3>Mzda</h3>
+      <span>Заробітна плата</span>
+      <p>Гроші, які програміст отримує за свою роботу.</p>
+    </div>
+
+    <div class="desk-card">
+      <div class="icon">⏰</div>
+      <h3>Termín</h3>
+      <span>Строк (дедлайн)</span>
+      <p>Час, до якого завдання має бути виконане.</p>
+    </div>
+
+    <div class="desk-card">
+      <div class="icon">📋</div>
+      <h3>Zadanie</h3>
+      <span>Завдання</span>
+      <p>Конкретна робота, яку потрібно виконати.</p>
+    </div>
+
+    <div class="desk-card">
+      <div class="icon">🧑‍💼</div>
+      <h3>Klient</h3>
+      <span>Клієнт</span>
+      <p>Людина або компанія, яка замовляє програму.</p>
+    </div>
+
+    <div class="desk-card">
+      <div class="icon">👔</div>
+      <h3>Šéf</h3>
+      <span>Керівник (бос)</span>
+      <p>Контролює роботу команди та приймає рішення.</p>
+    </div>
+
+    <div class="desk-card">
+      <div class="icon">🤝</div>
+      <h3>Zainteresované strany</h3>
+      <span>Зацікавлені сторони</span>
+      <p>Усі, кому важливий результат проєкту.</p>
+    </div>
+
+    <div class="desk-card">
+      <div class="icon">🧠</div>
+      <h3>Pomocníci</h3>
+      <span>Помічники</span>
+      <p>Колеги, ментори або інструменти, що допомагають у роботі.</p>
+    </div>
+
+    <div class="desk-card">
+      <div class="icon">💼</div>
+      <h3>Investor</h3>
+      <span>Інвестор</span>
+      <p>Людина або компанія, що вкладає гроші в проєкт.</p>
+    </div>
+
+    <div class="desk-card">
+      <div class="icon">🏠</div>
+      <h3>Práca na diaľku</h3>
+      <span>Віддалена робота</span>
+      <p>Можливість працювати з дому або з іншої країни.</p>
+    </div>
+
+  </div>
+</section>
+
+      <div style="margin-top:18px; display:flex; gap:12px; align-items:center;">
+        <button id="mark-done" class="btn btn-primary" data-i18n="mark_read">Позначити як прочитано</button>
+        <a href="into_course.html" class="btn btn-link" data-i18n="return_to_course">Повернутися до курсу</a>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="js/i18n.js"></script>
+<script src="js/lang-ui.js"></script>
+
+<script>
+  (function(){
+    const id = document.body.dataset.courseId;
+    const btn = document.getElementById('mark-done');
+
+    function isDoneLocal(){
+      return (window.isDone ? window.isDone(id) : (localStorage.getItem('done:' + id) === '1' || localStorage.getItem('done:' + id) === 'true'));
+    }
+
+    function updateBtn(){
+      const lang = localStorage.getItem('lang') || 'uk';
+      const dict = (typeof translations !== 'undefined' && translations[lang]) ? translations[lang] : {already_read:'Вже прочитано', mark_read:'Позначити як прочитано'};
+      if (!btn) return;
+      if (isDoneLocal()){
+        btn.textContent = dict.already_read || 'Вже прочитано';
+        btn.classList.add('done');
+        btn.setAttribute('aria-disabled','true');
+      } else {
+        btn.textContent = dict.mark_read || 'Позначити як прочитано';
+        btn.classList.remove('done');
+        btn.removeAttribute('aria-disabled');
+      }
+    }
+
+    if (btn){
+      btn.addEventListener('click', ()=>{
+        if (window.markCourseDone) {
+          window.markCourseDone(id);
+        } else {
+          console.log('[theory] fallback mark', id);
+          localStorage.setItem('done:'+id,'1');
+          updateBtn();
+          window.location.href='into_course.html';
+        }
+      });
+    }
+
+window.addEventListener('load', () => {
+  updateBtn();
+});
+
+window.addEventListener('storage', (e)=>{
+  if (e.key && e.key.startsWith('done:')) updateBtn();
+  if (e.key === 'lang') updateBtn();
+});
+  })();
+</script>
+</body>
+</html>

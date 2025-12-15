@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SlovakQuiz — Мета навчання</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style_goal.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <a class="logo" href="index.html" aria-label="SlovakQuiz — Home">Slovak<span>Quiz</span></a>
+
+  <div class="lang-switch" id="langSwitch">
+    <button class="lang-btn" aria-label="Language">
+      <span>Українська</span> <span class="chev">▾</span>
+    </button>
+
+    <div class="lang-menu hidden" id="langMenu">
+      <button class="lang-item" data-lang="uk"> Українська</button>
+      <button class="lang-item" data-lang="en"> English</button>
+      <button class="lang-item" data-lang="sk"> Slovenčina</button>
+    </div>
+  </div>
+</header>
+
+
+<main class="hero">
+  <section class="hero-card goal-card">
+
+    <div class="goal-header">
+      <h2 data-i18n="goal_header_title">Для чого ти вивчаєш словацьку?</h2>
+      <p data-i18n="goal_subtitle">Ми підберемо курси спеціально для тебе</p>
+    </div>
+
+    <div class="goal-options">
+      <button class="goal-option disabled" onclick="selectGoal('life')" data-i18n="option_life">
+        🌍 Для життя
+      </button>
+
+      <button class="goal-option" onclick="selectGoal('study')" data-i18n="option_study">
+        🎓 Для навчання
+      </button>
+    </div>
+
+  </section>
+</main>
+
+<script src="js/i18n.js"></script>
+<script src="js/lang-ui.js"></script>
+<script src="js/goal.js"></script>
+<script src="js/page-transition.js"></script>
+</body>
+</html>

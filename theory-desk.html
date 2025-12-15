@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>1. Робочий стіл програміста — SlovakQuiz</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style_courses.css" />
+</head>
+<body data-course-id="course-1">
+<header class="topbar">
+  <a class="logo" href="index.html">Slovak<span>Quiz</span></a>
+
+  <div class="lang-switch" id="langSwitch">
+    <button class="lang-btn" aria-label="Language">
+     <span>Українська</span> <span class="chev">▾</span>
+    </button>
+
+    <div class="lang-menu hidden" id="langMenu">
+      <button class="lang-item" data-lang="uk"> Українська</button>
+      <button class="lang-item" data-lang="en"> English</button>
+      <button class="lang-item" data-lang="sk"> Slovenčina</button>
+    </div>
+  </div>
+</header>
+<main class="hero">
+<section class="hero-card desk-layout">
+    <div>
+      <h1 data-i18n="course_1_title">1. Робочий стіл програміста</h1>
+      <p class="hint" data-i18n="course_1_meta">Короткий огляд робочого місця, основні терміни та інструменти.</p>
+
+<section class="desk-section">
+  <h2 class="desk-title">Робочий стіл програміста</h2>
+  <p class="desk-subtitle">
+    Реальні предмети, які зазвичай знаходяться на столі програміста
+  </p>
+
+  <div class="desk-grid">
+
+    <div class="desk-card">
+      <div class="icon">🪑</div>
+      <h3>Stôl</h3>
+      <span>Стіл</span>
+      <p>Місце, де розміщений комп’ютер та інше обладнання.</p>
+    </div>
+
+    <div class="desk-card">
+      <div class="icon">🖥️</div>
+      <h3>Počítač</h3>
+      <span>Комп’ютер</span>
+      <p>Основний робочий інструмент програміста.</p>
+    </div>
+
+    <div class="desk-card">
+      <div class="icon">🖱️</div>
+      <h3>Podložka pod myš</h3>
+      <span>Килимок для миші</span>
+      <p>Забезпечує комфортний та точний рух миші.</p>
+    </div>
+
+    <div class="desk-card">
+      <div class="icon">🌐</div>
+      <h3>Router</h3>
+      <span>Роутер</span>
+      <p>Надає доступ до інтернету.</p>
+    </div>
+
+    <div class="desk-card">
+      <div class="icon">🔌</div>
+      <h3>USB hub</h3>
+      <span>USB-хаб</span>
+      <p>Дозволяє підключити більше пристроїв.</p>
+    </div>
+
+    <div class="desk-card">
+      <div class="icon">💡</div>
+      <h3>Stolná lampa</h3>
+      <span>Настільна лампа</span>
+      <p>Освітлює робоче місце.</p>
+    </div>
+    <div class="desk-card">
+  <div class="icon">⌨️</div>
+  <h3>Klávesnica</h3>
+  <span>Клавіатура</span>
+  <p>Використовується для введення тексту та коду.</p>
+</div>
+
+<div class="desk-card">
+  <div class="icon">🖨️</div>
+  <h3>Tlačiareň</h3>
+  <span>Принтер</span>
+  <p>Друкує документи та матеріали.</p>
+</div>
+
+<div class="desk-card">
+  <div class="icon">⚡</div>
+  <h3>Stabilizátor napätia</h3>
+  <span>Стабілізатор напруги</span>
+  <p>Захищає техніку від перепадів струму.</p>
+</div>
+
+<div class="desk-card">
+  <div class="icon">💾</div>
+  <h3>USB kľúč</h3>
+  <span>USB-флешка</span>
+  <p>Для зберігання та перенесення файлів.</p>
+</div>
+
+  </div>
+</section>
+
+
+      <div style="margin-top:18px; display:flex; gap:12px; align-items:center;">
+        <button id="mark-done" class="btn btn-primary" data-i18n="mark_read">Позначити як прочитано</button>
+        <a href="into_course.html" class="btn btn-link" data-i18n="return_to_course">Повернутися до курсу</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="js/i18n.js"></script>
+<script src="js/lang-ui.js"></script>
+
+<script>
+  (function(){
+    const id = document.body.dataset.courseId;
+    const btn = document.getElementById('mark-done');
+
+    function isDoneLocal(){
+      return (window.isDone ? window.isDone(id) : (localStorage.getItem('done:' + id) === '1' || localStorage.getItem('done:' + id) === 'true'));
+    }
+
+    function updateBtn(){
+      const lang = localStorage.getItem('lang') || 'uk';
+      const dict = (typeof translations !== 'undefined' && translations[lang]) ? translations[lang] : {already_read:'Вже прочитано', mark_read:'Позначити як прочитано'};
+      if (!btn) return;
+      if (isDoneLocal()){
+        btn.textContent = dict.already_read || 'Вже прочитано';
+        btn.classList.add('done');
+        btn.setAttribute('aria-disabled','true');
+      } else {
+        btn.textContent = dict.mark_read || 'Позначити як прочитано';
+        btn.classList.remove('done');
+        btn.removeAttribute('aria-disabled');
+      }
+    }
+
+    if (btn){
+      btn.addEventListener('click', ()=>{
+        if (window.markCourseDone) {
+          window.markCourseDone(id);
+        } else {
+          console.log('[theory] fallback mark', id);
+          localStorage.setItem('done:'+id,'1');
+          updateBtn();
+          window.location.href='into_course.html';
+        }
+      });
+    }
+
+// ⚠️ НЕ вызывать сразу
+window.addEventListener('load', () => {
+  updateBtn();
+});
+
+window.addEventListener('storage', (e)=>{
+  if (e.key && e.key.startsWith('done:')) updateBtn();
+  if (e.key === 'lang') updateBtn();
+});
+
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+/* Styles for into_course grid (video-like cards) */
+
+.video-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap:16px;
+  margin-top:18px;
+  justify-content:center; /* center the grid within the container */
+  max-width:980px; /* limit grid width so cards stay centered */
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* keep heading and intro left-aligned while cards stay centered */
+.courses-content > .courses-title,
+.courses-content > .hint{
+  max-width:980px;
+  margin-left:0;
+}
+
+.video-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  cursor:pointer;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+
+.video-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 30px rgba(43,35,68,0.08);
+}
+
+.video-thumb{
+  width:100%;
+  aspect-ratio:16/9;
+  background-size:cover;
+  background-position:center;
+}
+
+.video-body{
+  padding:12px 14px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.video-title{
+  font-weight:800;
+  font-size:15px;
+  color:var(--text);
+  line-height:1.2;
+}
+
+.video-meta{
+  color:var(--muted);
+  font-weight:700;
+  font-size:13px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.video-actions{ display:flex; gap:8px; align-items:center; }
+.video-actions .btn{ padding:8px 12px; border-radius:10px; }
+
+/* disabled look */
+.video-card.disabled{ opacity:0.6; pointer-events:none; filter:grayscale(.06); }
+
+@media(max-width:640px){
+  .video-grid{ grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap:12px; }
+  .video-title{ font-size:14px; }
+}
+
+@media(max-width:480px){
+  .video-grid{ grid-template-columns: 1fr; gap:12px; padding:0 8px; }
+  .video-card{ border-radius:12px; }
+  .video-thumb{ aspect-ratio:16/9; }
+  .video-body{ padding:10px; }
+  .video-meta{ flex-direction:column; align-items:flex-start; gap:8px; }
+  .video-actions{ width:100%; }
+  .video-actions .btn{ width:100%; display:flex; justify-content:center; }
+  .video-card:hover{ transform:none; box-shadow:none; }
+}
+
+/* completed badge */
+.video-card{ position:relative; }
+.done-badge{
+  position:absolute;
+  right:10px;
+  top:10px;
+  background:var(--primary);
+  color:#fff;
+  border-radius:50%;
+  width:28px;
+  height:28px;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  box-shadow:0 6px 14px rgba(124,58,237,0.18);
+}
+
+.desk-section {
+  margin-top: 24px;
+}
+
+.desk-title {
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.desk-subtitle {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.desk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.desk-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  text-align: center;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.desk-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.desk-card .icon {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.desk-card h3 {
+  margin: 4px 0;
+}
+
+.desk-card span {
+  display: block;
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+/* ===== FORCE 4 CARDS IN A ROW ===== */
+
+/* расширяем рабочую область */
+.hero-card {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 40px 80px;
+}
+
+/* ЖЁСТКАЯ СЕТКА: 4 В РЯД */
+.desk-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* карточки */
+.desk-card {
+  min-height: 200px;
+  padding: 22px;
+  border-radius: 16px;
+}
+
+/* ноуты поменьше → 3 */
+@media (max-width: 1300px) {
+  .desk-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* планшет → 2 */
+@media (max-width: 900px) {
+  .desk-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* телефон → 1 */
+@media (max-width: 500px) {
+  .desk-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero-card.desk-layout {
+  grid-template-columns: 1fr;
+}
+
+/* === PRACTICE / TEST PAGE CENTER FIX === */
+.hero-card.test-layout-single {
+  grid-template-columns: 1fr;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* сам тест по центру */
+.test-area {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.hero-card.single{
+  grid-template-columns: 1fr !important;
+}
+/* === SWOT IMAGE FIX === */
+.swot-wrap{
+  margin-top:16px;
+  padding:16px;
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  overflow:hidden; /* 🔑 важливо */
+}
+
+.swot-wrap img{
+  width:100%;
+  max-width:100%;
+  height:auto;
+  display:block;
+  margin:0 auto;
+  object-fit:contain;
+}
+
+
+

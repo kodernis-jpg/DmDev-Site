@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SlovakQuiz — Вступний курс</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style_goal.css" />
+  <link rel="stylesheet" href="css/style_courses.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <a class="logo" href="index.html">Slovak<span>Quiz</span></a>
+
+  <div class="lang-switch" id="langSwitch">
+    <button class="lang-btn" aria-label="Language">
+    <span>Українська</span> <span class="chev">▾</span>
+    </button>
+
+    <div class="lang-menu hidden" id="langMenu">
+      <button class="lang-item" data-lang="uk"> Українська</button>
+      <button class="lang-item" data-lang="en"> English</button>
+      <button class="lang-item" data-lang="sk"> Slovenčina</button>
+    </div>
+  </div>
+</header>
+
+<main class="hero">
+<section class="hero-card">
+
+  <div class="courses-content">
+
+    <h2 class="courses-title" data-i18n="into_title">
+      Вступний курс: IT-словник
+    </h2>
+
+    <p class="hint" data-i18n="into_hint">
+      Ознайомся з базовими темами перед практикою та тестами
+    </p>
+
+    <!-- ===== THEMES GRID (video-like cards) ===== -->
+    <div class="video-grid">
+
+      <a href="theory-desk.html" class="video-card" data-course-id="course-1">
+        <div class="video-thumb" style="background-image:url('img/thumb-desk.png')"></div>
+        <div class="video-body">
+          <div class="video-title" data-i18n="course_1_title">1. Робочий стіл програміста</div>
+          <div class="video-meta">
+            <div data-i18n="course_1_meta">Теорія • 10 слайдів</div>
+            <div class="video-actions"><span class="btn btn-primary" data-i18n="btn_open">Відкрити</span></div>
+          </div>
+        </div>
+      </a>
+
+      <a href="theory-periphery.html" class="video-card" data-course-id="course-2">
+        <div class="video-thumb" style="background-image:url('img/thumb-periphery.png')"></div>
+        <div class="video-body">
+          <div class="video-title" data-i18n="course_2_title">2. Елементи інтерфейсу</div>
+          <div class="video-meta">
+            <div data-i18n="course_2_meta">Теорія • 10 слайдів</div>
+            <div class="video-actions"><span class="btn btn-primary" data-i18n="btn_open">Відкрити</span></div>
+          </div>
+        </div>
+      </a>
+
+      <a href="theory-pc.html" class="video-card" data-course-id="course-3">
+        <div class="video-thumb" style="background-image:url('img/thumb-cables.png')"></div>
+        <div class="video-body">
+          <div class="video-title" data-i18n="course_3_title">3. Усередині компʼютера</div>
+          <div class="video-meta">
+            <div data-i18n="course_3_meta">Теорія • 8 слайдів</div>
+            <div class="video-actions"><span class="btn btn-primary" data-i18n="btn_open">Відкрити</span></div>
+          </div>
+        </div>
+      </a>
+
+      <a href="theory-dev.html" class="video-card" data-course-id="course-4">
+        <div class="video-thumb" style="background-image:url('img/thumb-locked.png')"></div>
+        <div class="video-body">
+          <div class="video-title" data-i18n="course_4_title">4. Програміст і робота</div>
+          <div class="video-meta">
+            <div data-i18n="course_4_meta">Теорія • 9 слайдів</div>
+            <div class="video-actions"><span class="btn btn-primary" data-i18n="btn_open">Відкрити</span></div>
+          </div>
+        </div>
+      </a>
+
+      <div class="video-card disabled" data-course-id="practice">
+        <div class="video-thumb" style="background-image:url('img/thumb-locked.png')"></div>
+        <div class="video-body">
+          <div class="video-title" data-i18n="course_5_title">5. Практика та тест</div>
+          <div class="video-meta">
+            <div class="video-actions"><div class="locked" data-i18n="locked_label">Заблоковано</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/lang-ui.js"></script>
+    <script src="js/into-course.js"></script>
+
+  </div>
+
+</section>
+</main>
+
+<script src="js/page-transition.js"></script>
+</body>
+</html>
